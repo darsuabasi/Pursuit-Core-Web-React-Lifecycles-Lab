@@ -8,7 +8,9 @@ class UserForms extends React.Component {
     render() {
         return (
           <div className="UserForms">
-            <ToDoList/>
+            <ToDoList onChange={(e) => {
+              this.props.updateList(e.target.value) 
+            }}/>
           </div>
         );
       }

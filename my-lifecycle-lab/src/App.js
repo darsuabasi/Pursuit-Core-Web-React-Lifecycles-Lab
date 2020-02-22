@@ -7,16 +7,34 @@ import UserForms from "./components/Forms/UserForms"
 
 
 class App extends React.Component{
-  state = {
-    toDo: []
-  };
+  constructor(props) {
+    super(props) 
+    this.state = {list: []} 
+    this.updateList = this.updateList
+    debugger
+  }
+
+  addList = (text) => { this.setState({list: [text]})
+    // {}
+  }
+  // state = {
+  //   toDo: []
+  // };
 
   render() {
     return (
+      <div className="parentDiv">
+
       <div className="App">
         <UserForms/>
-
       </div>
+      
+      <div>
+        List
+        {this.state.value}
+      </div> 
+</div>
+
     );
   }
 }
